@@ -15,4 +15,14 @@ server.use(postRouter)
 
 const PORT = process.env.PORT || 5000;
 
-server.listen(PORT);
+mongoose.connect(process.env.MONGO_URL,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex:true
+  }).then(()=>{
+    server.listen(PORT);
+    console.log(`connected to mongoDB at port ${PORT} at ${Date.now()}`)
+}).catch(err=>{
+    console.error(err)
+})
+

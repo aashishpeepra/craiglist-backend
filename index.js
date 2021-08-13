@@ -11,7 +11,7 @@ server.use(cors());
 
 const postRouter = require("./routes/post");
 
-server.use(postRouter)
+server.use("/api/v1/posts/",postRouter)
 
 const PORT = process.env.PORT || 5000;
 

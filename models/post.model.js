@@ -62,10 +62,10 @@ const Post = new Schema({
         latitude:Number,
         longitude:Number
     },
-    images:[],
-    postType:[],
-    section:[],
-    subSection:[]
+    images:[String],
+    postType:[String],
+    category:[String],
+    subCategory:[String]
 },{timestamps:true})
 
 module.exports = mongoose.model("post",Post)

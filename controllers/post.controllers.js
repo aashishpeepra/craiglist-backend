@@ -87,7 +87,12 @@ exports.get_feed = async (req, res, next) => {
     );
   }
   category = category.split(",");
-  if (subCategory) subCategory = subCategory.split(",");
+  if (subCategory) subCategory = subCategory.split(",").map(each=>{
+    if(each.indexOf(" ")!=-1){
+      each = each.replace(" ","+")
+    }
+    return each
+  });
   let perPage = 20;
   let page = Math.max(0, parseInt(req.query.page));
   let data;

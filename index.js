@@ -10,9 +10,10 @@ server.use(express.urlencoded({extended:true}));
 server.use(cors());
 
 const postRouter = require("./routes/post");
+const paymentRouter = require("./routes/payment");
 
 server.use("/api/v1/posts/",postRouter)
-
+server.use("/api/v1/payment/",paymentRouter)
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(process.env.MONGO_URL,{

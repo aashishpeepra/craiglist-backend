@@ -101,6 +101,7 @@ exports.get_feed = async (req, res, next) => {
   let finalQuery = [
     {
       category: { $in: category },
+      hasPaid:true
     },
   ];
   if (subCategory) {

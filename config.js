@@ -1,3 +1,3 @@
 module.exports = {
-    frontend:"http://localhost:3000/"
+    frontend:"https://craiglist.vercel.app"
 }
